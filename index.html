@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="icon/css/all.css">
+</head>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    --bg-color: #020312;
+    --text-color: #fff;
+    --main-color: #eb4a4a;
+    --second-color: gray;
+    --other-color: #12141c;
+    --h1-font: 5.2rem;
+    --h2-font: 3.5rem; 
+    --p-font: 1.1rem;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+header{
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+    transition: all .40s ease;
+}
+.logo{
+    width: 135px;
+    height: auto;
+    text-decoration: none;
+}
+.navbar{
+    display: flex;
+
+}
+.navbar li{
+    list-style: none;
+}
+.navbar a{
+    color: white;
+    font-size: var(--p-font);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 25px;
+    margin: 0 2px;
+    border-radius: 0.5rem;
+    transition: all .40s ease;
+}
+.navbar a:hover{
+    background: var(--main-color);
+    color: var(--text-color);
+}
+#menu-icon{
+    font-size: 36px;
+    color: var(--text-color);
+    z-index: 10000;
+    cursor: pointer;
+    display: none;
+}
+.logo{
+    color: white;
+}
+span{
+    color: var(--main-color);
+}
+section{
+    min-height: 100vh;
+    position: relative;
+}
+.home{
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: -100;
+}
+.home-background{
+    height: 100vh;
+    background: url(/images/background3.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+.home-text h1{
+    margin: 20px 0;
+    font-size: var(--h1-font);
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+.home-text h4{
+    color: var(--main-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+.home-text h3{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+header.sticky{
+    padding: 10px;
+    background: var(--main-color);
+    border-bottom: 1px solid #0e1630;
+    color: var(--bg-color);
+}
+#about{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.about{
+    text-align: center;
+    padding: 40px;
+}
+.aboutcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.image img{
+    background-color: #fff;
+    width: 400px;
+    height: 420px;
+    border-radius: 500px;
+    z-index: -1;
+}
+.image{
+    margin: 20px;
+}
+.me{
+    margin: 80px;
+}
+.portfolio{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#services h1{
+    color: var(--text-color);
+}
+.port{
+    text-align: center;
+    color: wheat;
+}
+.tiles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.help{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    margin-left: 80px;
+    margin-right: 80px;
+    background: #171922;
+    color: wheat;
+}
+.tiles h3{
+    font-size: 24px;
+    font-weight: 600;
+    margin: 15px 0;
+    transition: all .40s ease;
+}
+.tiles p{
+    line-height: 20px;
+    color: #7c7c7c;
+}
+.tiles i{
+    color: var(--main-color);
+    font-size: 60px;
+}
+.services-content i{
+    font-size: 80px;
+}
+.services-content .card{
+    color: var(--main-color);
+}
+.card{
+    padding: 20px;
+    background: #171922;
+    border-top: 5px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 1s ease;
+    cursor: pointer;
+    margin: 10px;
+    color: white;
+
+}
+.services-content .card:hover{
+    transform: scale(1.01) translate(-5px);
+    border-top: 5px solid var(--main-color);
+
+}
+.card:hover h3{
+    color: var(--text-color);
+
+}
+.services{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.courses-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px));
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.contact{
+    margin: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+}
+.contact-text h4{
+    margin: 15px 0;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+.contact-text h2{
+    color: var(--second-color);
+    font-size: var(--h2-font);
+    font-weight: 600;
+}
+.contact-text p{
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+.contact-list{
+    margin-bottom: 3rem;
+
+}
+.contact-list li{
+    margin-bottom: 10px;
+    display: flex;
+}
+.contact-list li a{
+    text-decoration: none;
+    display: block;
+    color: var(--second-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    transition: all .40s ease;
+}
+.contact-list li a:hover{
+    transform: scale(1.01) translate(-5px);
+    color: var(--main-color);
+}
+.contact-icons i{
+    height: 40px;
+    width: 40px;
+    background: #12141c;
+    border-radius: 0.5rem;
+    color: var(--main-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: all .40s ease;
+}
+.contact-icons i:hover{
+    transform: scale(1.01) translate(-5px);
+    color: var(--text-color);
+    background: var(--main-color);
+}
+.contact-form form{
+    position: relative;
+}
+.contact-form form input,
+form textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 18px;
+    background: #12141c;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+.contact-form textarea{
+    resize: none;
+    height: 220px;
+
+}
+.contact-form form .send{
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    background: var(--main-color);
+    color: var(--text-color);
+    width: 190px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+}
+.last-text{
+    text-align: center;
+    padding: 15px;
+    color: #7c7c7c;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.top{
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+}
+.top i{
+    color: white;
+    background: chocolate;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+
+
+.reveal{
+    position: relative;
+    opacity: 0;
+    transition: all 2s ease;
+    transform: translateY(150px);
+}
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+
+@media (max-width: 900px) {
+    .aboutcontainer{
+        flex-direction: column;
+    }
+    .tiles{
+        display: flex;
+        flex-direction: column;
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }
+}
+</style>
+<body class="light">
+    <header>
+        <a href="#" class="logo">
+            iman
+        </a>
+        <div class="bx bx-menu" id="menu-icon">
+            <i class="fas fa-list"></i>
+        </div>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Services</a></li>
+            <li><a href="#services">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <h4>Hello</h4>
+            <h1>Welcome To </h1>
+            <h2>iman <span>WEB</span>DEV</h2>
+        </div>
+        <div class="home-background">
+            
+        </div>
+    </section>
+    <section>
+        <div id="about" class="reveal">
+            <div class="about light">
+            </div>
+            <div class="aboutcontainer light">
+                <div class="image">
+                    <img src="images/BeautyPlus_20210811173030766_save.png" alt="">
+                </div>
+                <br>
+                <div class="me light">
+                    <h2><strong>ABOUT ME</strong></h2>
+                        <br>
+                        <p>Hi there, my name is <strong>MANTE ISAAC.</strong> I am an aspiring 
+                            web developer. I have completed JavaScript certification course 
+                            from Programing Hub as well as HTML and CSS. I have developed most 
+                            responsive website all over the world. If you are looking for a 
+                            team that can bulid the most responsive website for your company or 
+                            an institution, then you're at the right place at the right time. 
+                            iman WEB DEV is here to help you acomplish your goals. 
+                        </p>
+                        <br>
+                        <br>
+                            <h2>WEB DEVELOPMENT</h2>
+                        <p>Web development is the work involved in developing a website for 
+                            the internet or the intranet. Web development can range from 
+                            developing a simple single static page of plain text to a complex 
+                            web application, electronic business and a social network services. A more comprehensive list of task to which web development commonly refers,
+                            may include Web Engineering, Web Design, Web Content Development, Client liaison, Client side/Server 
+                            side scripting, web server and network security configuration, and commerce development.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="portfolio" class="reveal">
+            <br>
+            <div class="port">
+                <h1 style="font-size: 50px; text-align: center">How We Can Help You</h1>
+                <br>
+                <h1 style="font-size: 60px; text-align: center; margin:20px;">Our Services</h1>
+                <h2><span>Better Design, Better Experiences</span></h2>
+            </div>
+            <br>
+            <br>
+            <div class="tiles" class="reveal">
+                <div id="card" class="card reveal">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Website <br> Development</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Delectus eaque earum possimus itaque nisi, iure sit cum porro, 
+                        debitis, nihil labore fugit tenetur voluptates nobis a! Vel 
+                        exercitationem repellat debitis?</p>
+                </div>
+                <div id="card" class="card reveal">
+                    <i class="fab fa-android"></i>
+                    <h3>Android Apps <br> Development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        A earum architecto dignissimos consequuntur, assumenda 
+                        harum repellendus maxime rerum delectus reiciendis sunt, 
+                        cupiditate itaque recusandae totam ad iusto et! Quos, ipsam?</p>
+                </div>
+                <div id="card" class="card reveal">
+                    <i class="fas fa-video-slash"></i>
+                    <h3>Video Editing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Aliquam nostrum repudiandae dignissimos laboriosam 
+                        consectetur quis odit ducimus vero doloribus! Ipsam, 
+                        accusamus deserunt? Consectetur, voluptas veritatis cumque 
+                        minus deleniti quisquam suscipit.</p>
+                </div>
+            </div>
+            <div class="help reveal">
+                <div class="inf1">
+                    <h2>Learn how to start coding</h2>
+                    <p>Certificate in business intelligence. <br>
+                        Certificate in fullstack web development. <br>
+                        Admissions are open, build your carrier now. <br>
+                        Start learning Today. Speak to a counselor. <br>
+                        Request a call back now. Start Studying Today. 
+                    </p>
+                </div>
+                <br>
+                <div class="inf1">
+                    <h2>Learn how to start coding</h2>
+                    <p>Gain the skills, Experience and Relationships you <br>
+                        Need To Become a Full Stack Web Developer. Hands <br>
+                        on Projects. Remote access. Carrier growth. Benefits: <br>
+                        Real World Team Based Projects
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <section>
+        <div id="services" class="reveal">
+            <h1 style="font-size: 60px; text-align: center; margin:20px;">Our<span>Courses</span></h1>
+            <div class="courses-content">
+                <div class="services-content">
+                    <div class="tiles" class="reveal">
+                        <div id="card" class="card reveal">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Delectus eaque earum possimus itaque nisi, iure sit cum porro, 
+                                debitis, nihil labore fugit tenetur voluptates nobis a! Vel 
+                                exercitationem repellat debitis?</p>
+                        </div>
+                        <div id="card" class="card reveal">
+                            <i class="fab fa-css3"></i>
+                            <h3>CSS</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                A earum architecto dignissimos consequuntur, assumenda 
+                                harum repellendus maxime rerum delectus reiciendis sunt, 
+                                cupiditate itaque recusandae totam ad iusto et! Quos, ipsam?</p>
+                        </div>
+                        <div id="card" class="card reveal">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                Aliquam nostrum repudiandae dignissimos laboriosam 
+                                consectetur quis odit ducimus vero doloribus! Ipsam, 
+                                accusamus deserunt? Consectetur, voluptas veritatis cumque 
+                                minus deleniti quisquam suscipit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact reveal" id="contact">
+        <div class="contact-text">
+            <h2>Contact Me</h2>
+            <h4>Let's work together</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Modi omnis dicta corporis temporibus? Vel hic veniam quos 
+                distinctio sed. Reprehenderit nihil accusamus natus dolorem 
+                quod necessitatibus amet, nam non velit.
+            </p>
+            <div class="contact-list">
+                <li><a href="#">Mante Isaac</a></li>
+                <li><a href="#">manteisaac024@gmail.com</a></li>
+                <li><a href="#">+233 0249920108</a></li>
+            </div>
+            <div class="contact-icons">
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class=" fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="text" placeholder="Enter your name" required>
+                <input type="email" placeholder="Enter your email" required>
+                <input type="text" placeholder="Enter your subject">
+                <textarea name="" id="" cols="40" rows="10" placeholder="Enter your Message" required>
+                    
+                </textarea>
+                <input type="submit" value="Submit" class="send">
+            </form>
+        </div>
+    </section>
+    <div class="last-text">
+        <p>Develop with love by iman WEB DEV</p>
+    </div>
+
+    <a href="#home" class="top"><i class="fas fa-arrow-up"></i></a>
+    <footer></footer>
+</body>
+<script>
+    const header = document.querySelector("header");
+
+window.addEventListener("scroll", function(){
+    header.classList.toggle("sticky", this.window.scrollY >0);
+})
+
+window.addEventListener("scroll", reveal);
+
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (let i = 0; i < reveals.length; i++) {
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 100;
+
+        if (revealtop < windowheight - revealpoint) {
+            reveals[i].classList.add('active');
+        }else
+        {
+            reveals[i].classList.remove('active');
+        }
+        
+    }
+}
+</script>
+</html>
